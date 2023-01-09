@@ -3,10 +3,7 @@
 <table border='1'>
     <thead>
         <th>Datum</th>
-        <th>Tijd</th>
-        <th>Naam Leerling</th>
-        <th>Lesinfo</th>
-        <th>Onderwerp</th>
+        <th>Mankement</th>
     </thead>
     <tbody>
         <?= $data['rows'] ?>

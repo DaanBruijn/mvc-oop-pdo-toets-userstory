@@ -5,7 +5,7 @@ class Mankementen extends Controller
 
     public function __construct()
     {
-        $this->MankementModel = $this->model('Mankementen');
+        $this->MankementModel = $this->model('Mankement');
     }
 
     public function index()
@@ -15,13 +15,10 @@ class Mankementen extends Controller
         // var_dump($result);
         $rows = '';
         foreach ($result as $info) {
-            $d = new DateTimeImmutable($info->DatumTijd, new DateTimeZone('Europe/Amsterdam'));
+            $d = new DateTimeImmutable($info->Datum, new DateTimeZone('Europe/Amsterdam'));
             $rows .= "<tr>
                         <td>{$d->format('d-m-Y')}</td>
-                        <td>{$d->format('H:i')}</td>
-                        <td>$info->Naam</td>
-                        <td><a href=''><img src='" . URLROOT . "/img/b_help.png' alt='questionmark'></a></td>
-                        <td><a href='" . URLROOT . "/lessen/topicslesson/{$info->Id}'><img src='" . URLROOT . "/img/b_props.png' alt='topiclist'></a></td>
+                        <td>$info->Mankementen</td>
                     </tr>";
         }
 

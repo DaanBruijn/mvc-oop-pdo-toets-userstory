@@ -16,7 +16,9 @@ class Mankement
                                 ,Auto.Kenteken
                           FROM Instructeur
                           INNER JOIN Auto
-                          ON Instructeur.Id = .InstructeurId
+                          ON Instructeur.Id = Auto.InstructeurId
+                          INNER JOIN Mankementen
+                          ON Auto.Id = Mankementen.AutoId
                           WHERE Instructeur.Id = :Id");
 
         $this->db->bind(':Id', 2);

@@ -52,8 +52,8 @@ INSERT INTO `country` (`Id`, `Name`, `CapitalCity`, `Continent`, `Population`) V
 -- Tabelstructuur voor tabel `Instructeur`
 --
 
-DROP TABLE IF EXISTS `Instructeur`;
-CREATE TABLE IF NOT EXISTS `Instructeur` (
+DROP TABLE IF EXISTS `Instructeur1`;
+CREATE TABLE IF NOT EXISTS `Instructeur1` (
   `Id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Email` varchar(255) NOT NULL,
   `Naam` varchar(255) NOT NULL,
