@@ -13,6 +13,7 @@ class Mankement
     {
         $this->db->query("SELECT Instructeur.Naam
                                 ,Instructeur.Email
+                                ,Instructeur.Id
                                 ,Auto.Kenteken
                                 ,Mankementen.Mankement
                                 ,Mankementen.Datum

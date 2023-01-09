@@ -24,6 +24,7 @@ class Mankementen extends Controller
 
         $data = [
             'title' => "Overzicht Mankementen",
+            'id' => "$info->Id",
             'naam' => $info->Naam,
             'email' => $info->Email,
             'kenteken' => $info->Kenteken,
@@ -50,9 +51,9 @@ class Mankementen extends Controller
         }
 
         $data = [
-            'title' => 'Onderwerp Toevoegen',
-            'mankementId' => $MankementId
+            'title' => 'Mankement Toevoegen',
+            'MankementId' => $MankementId
         ];
-        $this->view('mankement/addMankement', $data);
+        $this->view('Mankementen/addMankementen', $data);
     }
 }

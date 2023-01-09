@@ -13,5 +13,7 @@
         <?= $data['rows'] ?>
     </tbody>
 </table>
-<!-- <a href="<?= URLROOT; ?>/Mankementen/addMankement/<?= $data['MankementId']; ?>">
-    <input type="button" value="Mankement Toevoegen"> -->
+
+<a href="<?= URLROOT; ?>/Mankementen/addMankementen/<?= $data['id']; ?>">
+    <input type="button" value="Mankement toevoegen">
+</a>
