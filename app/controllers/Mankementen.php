@@ -5,12 +5,12 @@ class Mankementen extends Controller
 
     public function __construct()
     {
-        $this->mankementenModel = $this->model('Mankementen');
+        $this->MankementModel = $this->model('Mankementen');
     }
 
     public function index()
     {
-        $result = $this->mankementenModel->getMankementen();
+        $result = $this->MankementModel->getMankementen();
 
         // var_dump($result);
         $rows = '';
@@ -32,9 +32,9 @@ class Mankementen extends Controller
         $this->view('Mankementen/index', $data);
     }
 
-    function topicsLesson($MankementId)
+    function OverviewMankementen($MankementId)
     {
-        $result = $this->mankementenModel->getOverviewMankementen($MankementId);
+        $result = $this->MankementModel->getOverviewMankementen($MankementId);
 
         // var_dump($result);
 
@@ -60,7 +60,7 @@ class Mankementen extends Controller
             // var_dump($_POST);
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            $result = $this->mankementModel->addMankement($_POST);
+            $result = $this->MankementModel->addMankement($_POST);
 
             if ($result) {
                 echo "<p>Het nieuwe onderwerp is succesvol toegevoegd</p>";
