@@ -13,12 +13,12 @@ class Mankementen extends Controller
         $result = $this->MankementModel->getMankementen();
 
         // var_dump($result);
+        // exit();
         $rows = '';
         foreach ($result as $info) {
-            $d = new DateTimeImmutable($info->Datum, new DateTimeZone('Europe/Amsterdam'));
             $rows .= "<tr>
-                        <td>{$d->format('d-m-Y')}</td>
-                        <td>$info->Mankementen</td>
+                        <td>$info->Datum</td>
+                        <td>$info->Mankement</td>
                     </tr>";
         }
 
@@ -27,28 +27,6 @@ class Mankementen extends Controller
             'rows' => $rows
         ];
         $this->view('Mankementen/index', $data);
-    }
-
-    function OverviewMankementen($MankementId)
-    {
-        $result = $this->MankementModel->getOverviewMankementen($MankementId);
-
-        // var_dump($result);
-
-        $rows = "";
-        foreach ($result as $topic) {
-            $rows .= "<tr>      
-                        <td>$topic->Mankement</td>
-                      </tr>";
-        }
-
-
-        $data = [
-            'title' => 'Onderwerp mankement',
-            'rows'  => $rows,
-            'mankementId' => $MankementId
-        ];
-        $this->view('Mankementen/overviewMankementen', $data);
     }
 
     function addMankement($MankementId = NULL)

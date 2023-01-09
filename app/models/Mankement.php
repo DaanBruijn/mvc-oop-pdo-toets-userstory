@@ -14,6 +14,8 @@ class Mankement
         $this->db->query("SELECT Instructeur.Naam
                                 ,Instructeur.Email
                                 ,Auto.Kenteken
+                                ,Mankementen.Mankement
+                                ,Mankementen.Datum
                           FROM Instructeur
                           INNER JOIN Auto
                           ON Instructeur.Id = Auto.InstructeurId
