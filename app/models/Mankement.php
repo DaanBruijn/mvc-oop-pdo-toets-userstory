@@ -16,6 +16,7 @@ class Mankement
                                 ,Auto.Kenteken
                                 ,Mankementen.Mankement
                                 ,Mankementen.Datum
+                                ,Auto.Type
                           FROM Instructeur
                           INNER JOIN Auto
                           ON Instructeur.Id = Auto.InstructeurId

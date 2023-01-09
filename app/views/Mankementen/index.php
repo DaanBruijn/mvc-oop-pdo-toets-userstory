@@ -1,9 +1,8 @@
 <h3><?= $data['title'] ?></h3>
 
-<h4>Naam:</h4>
-<h4>Emailadres:</h4>
-<h4>Kenteken Auto:</h4>
-
+<h4>Auto van Instructeur: <?= $data['naam'] ?></h4>
+<h4>Emailadres: <?= $data['email'] ?></h4>
+<h4>Kenteken Auto: <?= $data['kenteken'] ?> <?= $data['type'] ?></h4>
 
 <table border='1'>
     <thead>

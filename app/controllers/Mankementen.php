@@ -24,6 +24,10 @@ class Mankementen extends Controller
 
         $data = [
             'title' => "Overzicht Mankementen",
+            'naam' => $info->Naam,
+            'email' => $info->Email,
+            'kenteken' => $info->Kenteken,
+            'type' => $info->Type,
             'rows' => $rows
         ];
         $this->view('Mankementen/index', $data);
