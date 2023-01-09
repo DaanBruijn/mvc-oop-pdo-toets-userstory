@@ -9,7 +9,7 @@ define('DB_NAME', 'be-mvcdb');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // De URL van de site
-define('URLROOT', 'http://be-mvcframework.local');
+define('URLROOT', 'http://mcv-oop-pdo-toets-userstory.local');
 
 // Naam van de site
 define('SITENAME', 'MVC-OOP-PDO-Toets-Userstory');

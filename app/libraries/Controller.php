@@ -1,5 +1,5 @@
 <?php
-// De parent controllerclass laad de model en de view
+// De parent controller class laad de model en de view
 
 class Controller
 {

@@ -1,16 +1,16 @@
 <?php
 
-class Lessen extends Controller
+class Mankementen extends Controller
 {
 
     public function __construct()
     {
-        $this->lesModel = $this->model('Les');
+        $this->mankementenModel = $this->model('Mankementen');
     }
 
     public function index()
     {
-        $result = $this->lesModel->getLessons();
+        $result = $this->mankementenModel->getMankementen();
 
         // var_dump($result);
         $rows = '';
@@ -26,54 +26,54 @@ class Lessen extends Controller
         }
 
         $data = [
-            'title' => "Overzicht Lessen",
+            'title' => "Overzicht Mankementen",
             'rows' => $rows
         ];
-        $this->view('lessen/index', $data);
+        $this->view('Mankementen/index', $data);
     }
 
-    function topicsLesson($lesId)
+    function topicsLesson($MankementId)
     {
-        $result = $this->lesModel->getTopicsLesson($lesId);
+        $result = $this->mankementenModel->getOverviewMankementen($MankementId);
 
         // var_dump($result);
 
         $rows = "";
         foreach ($result as $topic) {
             $rows .= "<tr>      
-                        <td>$topic->Onderwerp</td>
+                        <td>$topic->Mankement</td>
                       </tr>";
         }
 
 
         $data = [
-            'title' => 'Onderwerpen Les',
+            'title' => 'Onderwerp mankement',
             'rows'  => $rows,
-            'lesId' => $lesId
+            'mankementId' => $MankementId
         ];
-        $this->view('lessen/topicslesson', $data);
+        $this->view('Mankementen/overviewMankementen', $data);
     }
 
-    function addTopic($lesId = NULL)
+    function addMankement($MankementId = NULL)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // var_dump($_POST);
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            $result = $this->lesModel->addTopic($_POST);
+            $result = $this->mankementModel->addMankement($_POST);
 
             if ($result) {
                 echo "<p>Het nieuwe onderwerp is succesvol toegevoegd</p>";
             } else {
                 echo "<p>Het nieuwe onderwerp is niet toegevoegd</p>";
             }
-            header('Refresh:3; url=' . URLROOT . '/lessen/index');
+            header('Refresh:3; url=' . URLROOT . '/Mankementen/index');
         }
 
         $data = [
             'title' => 'Onderwerp Toevoegen',
-            'lesId' => $lesId
+            'mankementId' => $MankementId
         ];
-        $this->view('lessen/addTopic', $data);
+        $this->view('mankement/addMankement', $data);
     }
 }
