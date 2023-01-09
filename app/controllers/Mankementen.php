@@ -54,6 +54,6 @@ class Mankementen extends Controller
             'title' => 'Mankement Toevoegen',
             'MankementId' => $MankementId
         ];
-        $this->view('Mankementen/addMankementen', $data);
+        $this->view('Mankementen/addMankementen', $data);AAAAA
     }
 }
