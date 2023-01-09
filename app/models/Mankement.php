@@ -23,7 +23,8 @@ class Mankement
                           ON Instructeur.Id = Auto.InstructeurId
                           INNER JOIN Mankementen
                           ON Auto.Id = Mankementen.AutoId
-                          WHERE Instructeur.Id = :Id");
+                          WHERE Instructeur.Id = :Id
+                          Order By Mankementen.Datum Desc");
 
         $this->db->bind(':Id', 2);
 
