@@ -12,4 +12,4 @@ define('APPROOT', dirname(dirname(__FILE__)));
 define('URLROOT', 'http://be-mvcframework.local');
 
 // Naam van de site
-define('SITENAME', 'BE-MVC-Framework');
+define('SITENAME', 'MVC-OOP-PDO-Toets-Userstory');
